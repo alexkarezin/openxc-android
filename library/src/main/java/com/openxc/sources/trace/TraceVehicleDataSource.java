@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
@@ -244,7 +245,7 @@ public class TraceVehicleDataSource extends ContextualVehicleDataSource
                 }
             }
             disconnected();
-            SharedPreferences sharedpreferences1 = getContext().getSharedPreferences("isDisabledTracePlayingLoop", 0);
+            SharedPreferences sharedpreferences1 = PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
             boolean isDisableTraceLooping = sharedpreferences1.getBoolean("isDisabledTracePlayingLoop", false);
             if(isDisableTraceLooping){
                 start();
