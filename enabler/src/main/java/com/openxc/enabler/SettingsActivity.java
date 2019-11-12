@@ -33,6 +33,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.openxc.VehicleManager;
@@ -98,6 +99,23 @@ public class SettingsActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initializeLegacyLayout();
+
+        // gja test code here!
+        Preference button = findPreference("myCoolButton");
+        if (button != null) {
+            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    //code for what you want it to do
+                    return true;
+                }
+            });
+        } else {
+            Toast.makeText(this, "Activity null button", Toast.LENGTH_LONG).show();
+        }
+
+
+        // gja test code above this point
     }
 
     @Override
@@ -805,4 +823,8 @@ public class SettingsActivity extends PreferenceActivity {
             mPreferenceManager = null;
         }
     };
+
+    public void onClickButtonTest(View view) {
+        Toast.makeText(this, "onClickButtonTest PRESSED", Toast.LENGTH_LONG).show();
+    }
 }

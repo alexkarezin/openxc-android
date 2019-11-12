@@ -1,8 +1,10 @@
 package com.openxc.enabler.preferences;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -22,6 +24,21 @@ public class FileRecordingPreferenceManager extends VehiclePreferenceManager {
 
     public FileRecordingPreferenceManager(Context context) {
         super(context);
+
+        // gja code below this point
+//        Preference button = ((PreferenceActivity)context).findPreference("myCoolButton");
+//        if (button != null) {
+//            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+//                @Override
+//                public boolean onPreferenceClick(Preference preference) {
+//                    //code for what you want it to do
+//                    return true;
+//                }
+//            });
+//        } else {
+//            Toast.makeText(context, "FRPM: null button", Toast.LENGTH_LONG).show();
+//        }
+        // gja code above this point
     }
 
     public void close() {

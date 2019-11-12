@@ -9,4 +9,8 @@
             android:title="@string/output_preferences" />
     <header android:fragment="com.openxc.enabler.SettingsActivity$AboutPreferences"
         	android:title="@string/about_preferences"/>
+    <header android:title="@string/recording_preferences" >
+        <intent android:targetPackage="com.openxc.enabler.preferences"
+            android:action="com.openxc.enabler.preferences.SingletonRecordingPreferencesActivity" />
+    </header>
 </preference-headers>
